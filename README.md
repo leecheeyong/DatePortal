@@ -22,6 +22,7 @@ Date Portal is an AI integrated web app to help you organize your romantic life,
   <img width="1365" height="631" alt="image" src="https://github.com/user-attachments/assets/437cc998-23ba-474c-a040-efe5bf742bfb" />
   <img width="1365" height="631" alt="image" src="https://github.com/user-attachments/assets/2ab85ec4-dc64-48a9-98e8-b46c8c98cc34" />
   <img width="1365" height="629" alt="image" src="https://github.com/user-attachments/assets/242b19c0-236a-4779-81e3-f3b3ccb02c90" />
+  <img width="1365" height="632" alt="image" src="https://github.com/user-attachments/assets/7d13b208-c61f-45a3-a4c4-a9ae20d33c62" />
 </details>
 
 ## Setup
