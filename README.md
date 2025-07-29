@@ -1,4 +1,4 @@
-<img src="/public/logo.png" width="150" height="140">
+<img src="/public/logo.png" width="100" height="90">
 
 # [Date Portal](https://dateportal.vercel.app)
 
