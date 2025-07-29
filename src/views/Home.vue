@@ -12,24 +12,6 @@
           class="w-20 h-18 drop-shadow-lg animate-pulse-heart"
         />
       </div>
-      <div
-        v-if="currentView === 'login'"
-        class="bg-white rounded-lg shadow-lg p-4 sm:p-8"
-      >
-        <div class="text-center mb-8">
-          <img
-            src="/logo.png"
-            alt="Date Portal Logo"
-            class="w-16 h-16 mx-auto mb-4 drop-shadow-lg animate-pulse-heart"
-          />
-          <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-            Date Portal
-          </h1>
-          <p class="text-gray-600 text-base sm:text-lg">
-            Manage your romantic life with style
-          </p>
-        </div>
-      </div>
       <h1
         class="text-4xl sm:text-5xl font-extrabold text-pink-600 mb-4 animate-fade-in drop-shadow leading-tight"
       >
