@@ -22,7 +22,7 @@
             <img
               src="/logo.png"
               alt="Date Portal Logo"
-              class="w-16 h-16 mx-auto mb-4 drop-shadow-lg animate-pulse-heart"
+              class="w-18 h-16 mx-auto mb-4 drop-shadow-lg animate-pulse-heart"
             />
             <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
               Date Portal
