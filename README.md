@@ -1,4 +1,4 @@
-<img src="/public/logo.png" width="100" height="90">
+<img src="/public/logo.png" width="90" height="95">
 
 # [Date Portal](https://dateportal.vercel.app)
 
@@ -10,7 +10,7 @@ Date Portal is a web app to help you organize your romantic life, track your dat
 - View spending by category
 - Set and manage reminders for important events
 - Add and complete promises
-- AI Assistant for date ideas and relationship advice powered by [Hackclub AI](https://ai.hackclub.com)
+- AI Assistant for date ideas and relationship advice powered by [HackClub AI](https://ai.hackclub.com)
 - Responsive design for desktop and mobile
 
 ## Setup
