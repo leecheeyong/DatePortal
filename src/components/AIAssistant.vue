@@ -3,7 +3,7 @@
     <button
       v-if="!showChat"
       @click="showChat = true"
-      class="bg-pink-500 hover:bg-pink-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110"
+      :class="darkMode ? 'bg-pink-700 hover:bg-pink-800 text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110' : 'bg-pink-500 hover:bg-pink-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110'"
     >
       <svg
         class="w-6 h-6"
@@ -22,12 +22,13 @@
 
     <div
       v-if="showChat"
-      class="bg-white rounded-lg shadow-xl w-80 h-96 flex flex-col border border-gray-200"
+      :class="darkMode ? 'bg-gray-900 text-gray-100 border border-gray-700' : 'bg-white text-gray-900 border border-gray-200'"
+      class="rounded-lg shadow-xl w-80 h-96 flex flex-col"
     >
       <div
-        class="flex items-center justify-between p-4 border-b border-gray-200 bg-pink-50 rounded-t-lg"
+        :class="darkMode ? 'flex items-center justify-between p-4 border-b border-gray-700 bg-gray-800 rounded-t-lg' : 'flex items-center justify-between p-4 border-b border-gray-200 bg-pink-50 rounded-t-lg'"
       >
-        <h3 class="font-semibold text-gray-800 flex items-center">
+        <h3 :class="darkMode ? 'font-semibold text-gray-100 flex items-center' : 'font-semibold text-gray-800 flex items-center'">
           <svg
             class="w-5 h-5 mr-2 text-pink-500"
             fill="none"
@@ -45,7 +46,7 @@
         </h3>
         <button
           @click="showChat = false"
-          class="text-gray-400 hover:text-gray-600 transition-colors"
+          :class="darkMode ? 'text-gray-400 hover:text-gray-200 transition-colors' : 'text-gray-400 hover:text-gray-600 transition-colors'"
         >
           <svg
             class="w-5 h-5"
@@ -70,8 +71,8 @@
           :class="[
             'max-w-xs rounded-lg p-3 text-sm',
             message.role === 'user'
-              ? 'bg-pink-500 text-white ml-auto'
-              : 'bg-gray-100 text-gray-800',
+              ? (darkMode ? 'bg-pink-700 text-white ml-auto' : 'bg-pink-500 text-white ml-auto')
+              : (darkMode ? 'bg-gray-800 text-gray-100' : 'bg-gray-100 text-gray-800'),
           ]"
           v-html="
             message.role === 'assistant'
@@ -82,19 +83,19 @@
 
         <div
           v-if="isLoading"
-          class="bg-gray-100 text-gray-800 max-w-xs rounded-lg p-3 text-sm"
+          :class="darkMode ? 'bg-gray-800 text-gray-100 max-w-xs rounded-lg p-3 text-sm' : 'bg-gray-100 text-gray-800 max-w-xs rounded-lg p-3 text-sm'"
         >
           <div class="flex items-center space-x-2">
             <div class="flex space-x-1">
               <div
-                class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                :class="darkMode ? 'w-2 h-2 bg-gray-400 rounded-full animate-bounce' : 'w-2 h-2 bg-gray-400 rounded-full animate-bounce'"
               ></div>
               <div
-                class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                :class="darkMode ? 'w-2 h-2 bg-gray-400 rounded-full animate-bounce' : 'w-2 h-2 bg-gray-400 rounded-full animate-bounce'"
                 style="animation-delay: 0.1s"
               ></div>
               <div
-                class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                :class="darkMode ? 'w-2 h-2 bg-gray-400 rounded-full animate-bounce' : 'w-2 h-2 bg-gray-400 rounded-full animate-bounce'"
                 style="animation-delay: 0.2s"
               ></div>
             </div>
@@ -103,19 +104,19 @@
         </div>
       </div>
 
-      <div class="border-t border-gray-200 p-4">
+      <div :class="darkMode ? 'border-t border-gray-700 p-4' : 'border-t border-gray-200 p-4'">
         <form @submit.prevent="sendMessage" class="flex space-x-2">
           <input
             v-model="newMessage"
             type="text"
             placeholder="Ask for date ideas, advice..."
-            class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+            :class="darkMode ? 'flex-1 border border-gray-700 rounded-lg px-3 py-2 text-sm bg-gray-900 text-gray-100 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent' : 'flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent'"
             :disabled="isLoading"
           />
           <button
             type="submit"
             :disabled="!newMessage.trim() || isLoading"
-            class="bg-pink-500 hover:bg-pink-600 disabled:bg-gray-300 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+            :class="darkMode ? 'bg-pink-700 hover:bg-pink-800 disabled:bg-gray-700 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors' : 'bg-pink-500 hover:bg-pink-600 disabled:bg-gray-300 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors'"
           >
             Send
           </button>
@@ -139,6 +140,7 @@ const messages = ref([
 ]);
 const newMessage = ref("");
 const isLoading = ref(false);
+const darkMode = ref(false);
 
 const sendMessage = async () => {
   if (!newMessage.value.trim()) return;
