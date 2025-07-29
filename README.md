@@ -13,6 +13,13 @@ Date Portal is a web app to help you organize your romantic life, track your dat
 - AI Assistant for date ideas and relationship advice powered by [HackClub AI](https://ai.hackclub.com)
 - Responsive design for desktop and mobile
 
+<details>
+  <summary>
+<h2>Demo</h2>
+  </summary>
+  
+</details>
+
 ## Setup
 
 1. **Clone the repository:**
