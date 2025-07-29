@@ -19,7 +19,11 @@
           class="bg-white rounded-lg shadow-lg p-4 sm:p-8"
         >
           <div class="text-center mb-8">
-            <img src="/logo.png" alt="Date Portal Logo" class="w-16 h-16 mx-auto mb-4 drop-shadow-lg animate-pulse-heart" />
+            <img
+              src="/logo.png"
+              alt="Date Portal Logo"
+              class="w-16 h-16 mx-auto mb-4 drop-shadow-lg animate-pulse-heart"
+            />
             <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
               Date Portal
             </h1>
@@ -151,14 +155,26 @@
               </h1>
             </div>
             <div class="flex items-center space-x-2">
-              <span class="text-xs sm:text-sm text-gray-600">{{ user.email }}</span>
+              <span class="text-xs sm:text-sm text-gray-600">{{
+                user.email
+              }}</span>
               <button
                 @click="handleLogout"
                 class="p-2 rounded-full hover:bg-pink-100 text-pink-500 transition-colors focus:outline-none"
                 title="Sign Out"
               >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1" />
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1"
+                  />
                 </svg>
               </button>
             </div>
@@ -395,12 +411,23 @@
                 class="bg-white rounded-lg shadow-sm p-6 border border-gray-200 hover:shadow-md transition-shadow"
               >
                 <div class="flex justify-between items-start mb-4">
-                  <h3 class="font-semibold text-gray-900">{{ dateEntry.title }}</h3>
-                  <span class="text-2xl">{{ getCategoryEmoji(dateEntry.category) }}</span>
+                  <h3 class="font-semibold text-gray-900">
+                    {{ dateEntry.title }}
+                  </h3>
+                  <span class="text-2xl">{{
+                    getCategoryEmoji(dateEntry.category)
+                  }}</span>
                 </div>
                 <div v-if="editingDateId === dateEntry.id" class="space-y-2">
-                  <input v-model="editingDate.title" type="text" class="w-full border rounded-lg px-3 py-2 mb-2" />
-                  <select v-model="editingDate.category" class="w-full border rounded-lg px-3 py-2 mb-2">
+                  <input
+                    v-model="editingDate.title"
+                    type="text"
+                    class="w-full border rounded-lg px-3 py-2 mb-2"
+                  />
+                  <select
+                    v-model="editingDate.category"
+                    class="w-full border rounded-lg px-3 py-2 mb-2"
+                  >
                     <option value="dinner">Dinner</option>
                     <option value="movie">Movie</option>
                     <option value="activity">Activity</option>
@@ -408,32 +435,73 @@
                     <option value="gift">Gift</option>
                     <option value="other">Other</option>
                   </select>
-                  <input v-model.number="editingDate.cost" type="number" min="0" step="0.01" class="w-full border rounded-lg px-3 py-2 mb-2" />
-                  <textarea v-model="editingDate.notes" rows="2" class="w-full border rounded-lg px-3 py-2 mb-2"></textarea>
+                  <input
+                    v-model.number="editingDate.cost"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    class="w-full border rounded-lg px-3 py-2 mb-2"
+                  />
+                  <textarea
+                    v-model="editingDate.notes"
+                    rows="2"
+                    class="w-full border rounded-lg px-3 py-2 mb-2"
+                  ></textarea>
                   <div class="flex justify-end space-x-2">
-                    <button @click="cancelEditDate" class="px-4 py-2 text-gray-600 hover:text-gray-800 font-medium">Cancel</button>
-                    <button @click="handleUpdateDate" :disabled="dateActionLoading" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-lg font-medium" >Save</button>
+                    <button
+                      @click="cancelEditDate"
+                      class="px-4 py-2 text-gray-600 hover:text-gray-800 font-medium"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      @click="handleUpdateDate"
+                      :disabled="dateActionLoading"
+                      class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-lg font-medium"
+                    >
+                      Save
+                    </button>
                   </div>
                 </div>
                 <div v-else class="space-y-2">
                   <div class="flex justify-between text-sm">
                     <span class="text-gray-600">Category:</span>
-                    <span class="font-medium text-gray-900 capitalize">{{ dateEntry.category }}</span>
+                    <span class="font-medium text-gray-900 capitalize">{{
+                      dateEntry.category
+                    }}</span>
                   </div>
                   <div class="flex justify-between text-sm">
                     <span class="text-gray-600">Cost:</span>
-                    <span class="font-medium text-pink-500">${{ dateEntry.cost }}</span>
+                    <span class="font-medium text-pink-500"
+                      >${{ dateEntry.cost }}</span
+                    >
                   </div>
                   <div class="flex justify-between text-sm">
                     <span class="text-gray-600">Date:</span>
-                    <span class="font-medium text-gray-900">{{ formatDate(dateEntry.createdAt) }}</span>
+                    <span class="font-medium text-gray-900">{{
+                      formatDate(dateEntry.createdAt)
+                    }}</span>
                   </div>
-                  <div v-if="dateEntry.notes" class="mt-4 text-sm text-gray-600 bg-gray-50 rounded-lg p-3">
+                  <div
+                    v-if="dateEntry.notes"
+                    class="mt-4 text-sm text-gray-600 bg-gray-50 rounded-lg p-3"
+                  >
                     {{ dateEntry.notes }}
                   </div>
                   <div class="flex justify-end mt-2 space-x-2">
-                    <button @click="startEditDate(dateEntry)" class="text-pink-500 hover:text-pink-600 font-medium text-sm">Edit</button>
-                    <button @click="handleDeleteDate(dateEntry.id)" :disabled="dateActionLoading" class="text-red-500 hover:text-red-600 font-medium text-sm">Delete</button>
+                    <button
+                      @click="startEditDate(dateEntry)"
+                      class="text-pink-500 hover:text-pink-600 font-medium text-sm"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      @click="handleDeleteDate(dateEntry.id)"
+                      :disabled="dateActionLoading"
+                      class="text-red-500 hover:text-red-600 font-medium text-sm"
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
               </div>
@@ -650,32 +718,87 @@
                 class="bg-white rounded-lg shadow-sm p-6 border border-gray-200 hover:shadow-md transition-shadow"
               >
                 <div v-if="editingReminderId === reminder.id">
-                  <input v-model="editingReminder.title" type="text" class="w-full border rounded-lg px-3 py-2 mb-2" />
-                  <input v-model="editingReminder.date" type="date" class="w-full border rounded-lg px-3 py-2 mb-2" />
-                  <textarea v-model="editingReminder.notes" rows="2" class="w-full border rounded-lg px-3 py-2 mb-2"></textarea>
+                  <input
+                    v-model="editingReminder.title"
+                    type="text"
+                    class="w-full border rounded-lg px-3 py-2 mb-2"
+                  />
+                  <input
+                    v-model="editingReminder.date"
+                    type="date"
+                    class="w-full border rounded-lg px-3 py-2 mb-2"
+                  />
+                  <textarea
+                    v-model="editingReminder.notes"
+                    rows="2"
+                    class="w-full border rounded-lg px-3 py-2 mb-2"
+                  ></textarea>
                   <div class="flex justify-end space-x-2">
-                    <button @click="cancelEditReminder" class="px-4 py-2 text-gray-600 hover:text-gray-800 font-medium">Cancel</button>
-                    <button @click="handleUpdateReminder" :disabled="reminderActionLoading" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-lg font-medium">Save</button>
+                    <button
+                      @click="cancelEditReminder"
+                      class="px-4 py-2 text-gray-600 hover:text-gray-800 font-medium"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      @click="handleUpdateReminder"
+                      :disabled="reminderActionLoading"
+                      class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-lg font-medium"
+                    >
+                      Save
+                    </button>
                   </div>
                 </div>
                 <div v-else>
                   <div class="flex justify-between items-start">
                     <div class="flex-1">
-                      <h3 class="font-semibold text-gray-900 mb-2">{{ reminder.title }}</h3>
+                      <h3 class="font-semibold text-gray-900 mb-2">
+                        {{ reminder.title }}
+                      </h3>
                       <div class="flex items-center text-sm text-gray-600 mb-2">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <svg
+                          class="w-4 h-4 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
                         </svg>
                         {{ formatDate(reminder.date) }}
                       </div>
-                      <p v-if="reminder.notes" class="text-sm text-gray-600">{{ reminder.notes }}</p>
+                      <p v-if="reminder.notes" class="text-sm text-gray-600">
+                        {{ reminder.notes }}
+                      </p>
                     </div>
                     <div class="ml-4 flex flex-col space-y-2">
-                      <span :class="['px-3 py-1 rounded-full text-xs font-medium', isUpcoming(reminder.date) ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-800']">
-                        {{ isUpcoming(reminder.date) ? 'Upcoming' : 'Past' }}
+                      <span
+                        :class="[
+                          'px-3 py-1 rounded-full text-xs font-medium',
+                          isUpcoming(reminder.date)
+                            ? 'bg-yellow-100 text-yellow-800'
+                            : 'bg-gray-100 text-gray-800',
+                        ]"
+                      >
+                        {{ isUpcoming(reminder.date) ? "Upcoming" : "Past" }}
                       </span>
-                      <button @click="startEditReminder(reminder)" class="text-pink-500 hover:text-pink-600 font-medium text-xs">Edit</button>
-                      <button @click="handleDeleteReminder(reminder.id)" :disabled="reminderActionLoading" class="text-red-500 hover:text-red-600 font-medium text-xs">Delete</button>
+                      <button
+                        @click="startEditReminder(reminder)"
+                        class="text-pink-500 hover:text-pink-600 font-medium text-xs"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        @click="handleDeleteReminder(reminder.id)"
+                        :disabled="reminderActionLoading"
+                        class="text-red-500 hover:text-red-600 font-medium text-xs"
+                      >
+                        Delete
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -771,7 +894,9 @@
               >
                 <div class="flex items-start space-x-4">
                   <button
-                    @click="togglePromise(promise)" :disabled="promiseActionLoading" class="mt-1 flex-shrink-0"
+                    @click="togglePromise(promise)"
+                    :disabled="promiseActionLoading"
+                    class="mt-1 flex-shrink-0"
                   >
                     <div
                       :class="[
@@ -823,7 +948,13 @@
                   </div>
                 </div>
                 <div class="flex justify-end mt-2 space-x-2">
-                  <button @click="handleDeletePromise(promise.id)" :disabled="promiseActionLoading" class="text-red-500 hover:text-red-600 font-medium text-xs">Delete</button>
+                  <button
+                    @click="handleDeletePromise(promise.id)"
+                    :disabled="promiseActionLoading"
+                    class="text-red-500 hover:text-red-600 font-medium text-xs"
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             </div>
@@ -1239,7 +1370,7 @@ const isUpcoming = (date) => {
 };
 
 const editingDateId = ref(null);
-const editingDate = ref({ title: '', category: '', cost: 0, notes: '' });
+const editingDate = ref({ title: "", category: "", cost: 0, notes: "" });
 
 const startEditDate = (dateEntry) => {
   editingDateId.value = dateEntry.id;
@@ -1248,7 +1379,7 @@ const startEditDate = (dateEntry) => {
 
 const cancelEditDate = () => {
   editingDateId.value = null;
-  editingDate.value = { title: '', category: '', cost: 0, notes: '' };
+  editingDate.value = { title: "", category: "", cost: 0, notes: "" };
 };
 
 const handleUpdateDate = async () => {
@@ -1258,7 +1389,7 @@ const handleUpdateDate = async () => {
     await loadUserData();
     cancelEditDate();
   } catch (err) {
-    console.error('Failed to update date:', err);
+    console.error("Failed to update date:", err);
   } finally {
     dateActionLoading.value = false;
   }
@@ -1266,7 +1397,7 @@ const handleUpdateDate = async () => {
 
 // State for editing reminders
 const editingReminderId = ref(null);
-const editingReminder = ref({ title: '', date: '', notes: '' });
+const editingReminder = ref({ title: "", date: "", notes: "" });
 
 const startEditReminder = (reminder) => {
   editingReminderId.value = reminder.id;
@@ -1275,7 +1406,7 @@ const startEditReminder = (reminder) => {
 
 const cancelEditReminder = () => {
   editingReminderId.value = null;
-  editingReminder.value = { title: '', date: '', notes: '' };
+  editingReminder.value = { title: "", date: "", notes: "" };
 };
 
 const handleUpdateReminder = async () => {
@@ -1285,7 +1416,7 @@ const handleUpdateReminder = async () => {
     await loadUserData();
     cancelEditReminder();
   } catch (err) {
-    console.error('Failed to update reminder:', err);
+    console.error("Failed to update reminder:", err);
   } finally {
     reminderActionLoading.value = false;
   }
@@ -1297,7 +1428,7 @@ const handleDeleteReminder = async (reminderId) => {
     await deleteReminder(reminderId);
     await loadUserData();
   } catch (err) {
-    console.error('Failed to delete reminder:', err);
+    console.error("Failed to delete reminder:", err);
   } finally {
     reminderActionLoading.value = false;
   }
@@ -1309,7 +1440,7 @@ const handleDeleteDate = async (dateId) => {
     await deleteDate(dateId);
     await loadUserData();
   } catch (err) {
-    console.error('Failed to delete date:', err);
+    console.error("Failed to delete date:", err);
   } finally {
     dateActionLoading.value = false;
   }
@@ -1321,7 +1452,7 @@ const handleDeletePromise = async (promiseId) => {
     await deletePromise(promiseId);
     await loadUserData();
   } catch (err) {
-    console.error('Failed to delete promise:', err);
+    console.error("Failed to delete promise:", err);
   } finally {
     promiseActionLoading.value = false;
   }
