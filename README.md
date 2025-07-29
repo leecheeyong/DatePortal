@@ -16,7 +16,7 @@ Date Portal is a web app to help you organize your romantic life, track your dat
 
 <details>
   <summary>
-<h2>Demo</h2>
+<h2>Screenshots</h2>
   </summary>
   <img width="1365" height="630" alt="Screenshot 2025-07-30 003334" src="https://github.com/user-attachments/assets/25c48233-38ae-47c2-8da2-6a7126f395ff" />
   <img width="1365" height="631" alt="image" src="https://github.com/user-attachments/assets/437cc998-23ba-474c-a040-efe5bf742bfb" />
