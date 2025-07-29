@@ -12,7 +12,7 @@ Date Portal is an AI integrated web app to help you organize your romantic life,
 - Set and manage reminders for important events
 - Add and complete promises
 - AI Assistant for date ideas and relationship advice powered by [HackClub AI](https://ai.hackclub.com)
-- Responsive design for desktop and mobile
+- Dark mode & Responsive design for desktop and mobile
 
 <details>
   <summary>
