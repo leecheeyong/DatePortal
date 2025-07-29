@@ -2,7 +2,7 @@
 
 # [Date Portal](https://dateportal.vercel.app)
 
-Date Portal is a web app to help you organize your romantic life, track your dates, manage your budget, set reminders, and keep promises.
+Date Portal is an AI integrated web app to help you organize your romantic life, track your dates, manage your budget, set reminders, and keep promises.
 
 ## Features
 
