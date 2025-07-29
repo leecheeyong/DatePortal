@@ -5,6 +5,7 @@
 Date Portal is a web app to help you organize your romantic life, track your dates, manage your budget, set reminders, and keep promises.
 
 ## Features
+
 - Add, edit, and delete dates with categories, cost, and notes
 - Track monthly spending and budget
 - View spending by category
