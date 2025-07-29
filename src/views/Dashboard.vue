@@ -31,6 +31,7 @@
           <div class="text-center mb-8">
             <img
               src="/logo.png"
+              loading="lazy"
               alt="Date Portal Logo"
               class="w-18 h-16 mx-auto mb-4 drop-shadow-lg animate-pulse-heart"
             />
@@ -237,7 +238,7 @@
         <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
           <div class="flex justify-between items-center h-16">
             <div class="flex items-center space-x-2">
-              <img src="/logo.png" alt="Logo" class="w-11 h-10" />
+              <img src="/logo.png" loading="lazy" alt="Logo" class="w-11 h-10" />
               <h1 class="text-lg sm:text-xl font-bold">Date Portal</h1>
             </div>
             <div class="flex items-center space-x-2">
